@@ -1,1 +1,1 @@
-# jQ
+# jQuery learn note
