@@ -400,3 +400,58 @@ $("button").click(function(){
     $("#div1").width(500).height(500);
 });
 ```
+## jQuery Traversing - Ancestors
+
+### Traversing Up the DOM Tree
+Three useful jQuery methods for traversing up the DOM tree are:
+
+parent()
+parents()
+parentsUntil()
+### jQuery parent() Method
+The parent() method returns the direct parent element of the selected element.
+
+This method only traverse a single level up the DOM tree.
+
+The following example returns the direct parent element of each <span> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("span").parent();
+});
+```
+
+### jQuery parents() Method
+The parents() method returns all ancestor elements of the selected element, all the way up to the document's root element (<html>).
+
+The following example returns all ancestors of all <span> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("span").parents();
+});
+```
+You can also use an optional parameter to filter the search for ancestors.
+
+The following example returns all ancestors of all <span> elements that are <ul> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("span").parents("ul");
+});
+```
+
+### jQuery parentsUntil() Method
+The parentsUntil() method returns all ancestor elements between two given arguments.
+
+The following example returns all ancestor elements between a <span> and a <div> element:
+
+Example
+```
+$(document).ready(function(){
+    $("span").parentsUntil("div");
+});
+```
