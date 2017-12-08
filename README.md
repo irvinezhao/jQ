@@ -455,3 +455,51 @@ $(document).ready(function(){
     $("span").parentsUntil("div");
 });
 ```
+## jQuery Traversing - Descendants
+### Traversing Down the DOM Tree
+Two useful jQuery methods for traversing down the DOM tree are:
+
+children()
+find()
+### jQuery children() Method
+The children() method returns all direct children of the selected element.
+
+This method only traverse a single level down the DOM tree.
+
+The following example returns all elements that are direct children of each <div> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("div").children();
+});
+```
+You can also use an optional parameter to filter the search for children.
+
+The following example returns all <p> elements with the class name "first", that are direct children of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").children("p.first");
+});
+```
+### jQuery find() Method
+The find() method returns descendant elements of the selected element, all the way down to the last descendant.
+
+The following example returns all <span> elements that are descendants of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").find("span");
+});
+```
+The following example returns all descendants of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").find("*");
+});
+```
