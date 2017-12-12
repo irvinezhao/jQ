@@ -734,3 +734,100 @@ $(document).ready(function(){
     $("p").not(".intro");
 });
 ```
+
+## jQuery - AJAX
+
+### jQuery load() Method
+Syntax:
+```
+$(selector).load(URL,data,callback);
+```
+The required URL parameter specifies the URL you wish to load.
+
+The optional data parameter specifies a set of querystring key/value pairs to send along with the request.
+
+The optional callback parameter is the name of a function to be executed after the load() method is completed.
+
+
+
+The following example loads the content of the file "demo_test.txt" into a specific <div> element:
+
+Example
+```
+$("#div1").load("demo_test.txt");
+```
+It is also possible to add a jQuery selector to the URL parameter.
+
+The following example loads the content of the element with id="p1", inside the file "demo_test.txt", into a specific <div> element:
+
+Example
+```
+$("#div1").load("demo_test.txt #p1");
+```
+The optional callback parameter specifies a callback function to run when the load() method is completed. The callback function can have different parameters:
+
+responseTxt - contains the resulting content if the call succeeds
+statusTxt - contains the status of the call
+xhr - contains the XMLHttpRequest object
+The following example displays an alert box after the load() method completes. If the load() method has succeeded, it displays "External content loaded successfully!", and if it fails it displays an error message:
+
+Example
+```
+$("button").click(function(){
+    $("#div1").load("demo_test.txt", function(responseTxt, statusTxt, xhr){
+        if(statusTxt == "success")
+            alert("External content loaded successfully!");
+        if(statusTxt == "error")
+            alert("Error:" + xhr.status + ":" + xhr.statusText);
+    });
+});
+```
+### jQuery - AJAX get() and post() Methods
+The $.get() method requests data from the server with an HTTP GET request.
+
+Syntax:
+```
+$.get(URL,callback);
+```
+The required URL parameter specifies the URL you wish to request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+The following example uses the $.get() method to retrieve data from a file on the server:
+
+Example
+```
+$("button").click(function(){
+    $.get("demo_test.asp", function(data, status){
+        alert("Data:" + data + "\nStatus:" + status);
+    });
+});
+```
+### jQuery $.post() Method
+The $.post() method requests data from the server using an HTTP POST request.
+
+Syntax:
+```
+$.post(URL,data,callback);
+```
+The required URL parameter specifies the URL you wish to request.
+
+The optional data parameter specifies some data to send along with the request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+The following example uses the $.post() method to send some data along with the request:
+
+Example
+```
+$("button").click(function(){
+    $.post("demo_test_post.asp",
+    {
+        name: "Donald Duck",
+        city: "Duckburg"
+    },
+    function(data, status){
+        alert("Data:" + data + "\nStatus:" + status);
+    });
+});
+```
