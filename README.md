@@ -545,3 +545,192 @@ $(document).ready(function(){
     $("span").parents("ul");
 });
 ```
+### jQuery parentsUntil() Method
+The parentsUntil() method returns all ancestor elements between two given arguments.
+
+The following example returns all ancestor elements between a <span> and a <div> element:
+
+Example
+```
+$(document).ready(function(){
+    $("span").parentsUntil("div");
+});
+```
+## jQuery Traversing - Descendants
+A descendant is a child, grandchild, great-grandchild, and so on.
+### Traversing Down the DOM Tree
+Two useful jQuery methods for traversing down the DOM tree are:
+
+children()
+find()
+### jQuery children() Method
+The children() method returns all direct children of the selected element.
+
+This method only traverse a single level down the DOM tree.
+
+The following example returns all elements that are direct children of each <div> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("div").children();
+});
+```
+You can also use an optional parameter to filter the search for children.
+
+The following example returns all <p> elements with the class name "first", that are direct children of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").children("p.first");
+});
+```
+### jQuery find() Method
+The find() method returns descendant elements of the selected element, all the way down to the last descendant.
+
+The following example returns all <span> elements that are descendants of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").find("span");
+});
+```
+The following example returns all descendants of <div>:
+
+Example
+```
+$(document).ready(function(){
+    $("div").find("*");
+});
+```
+## jQuery Traversing - Siblings
+### Traversing Sideways in The DOM Tree
+There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+siblings()
+next()
+nextAll()
+nextUntil()
+prev()
+prevAll()
+prevUntil()
+### jQuery siblings() Method
+The siblings() method returns all sibling elements of the selected element.
+
+The following example returns all sibling elements of <h2>:
+
+Example
+```
+$(document).ready(function(){
+    $("h2").siblings();
+});
+```
+You can also use an optional parameter to filter the search for siblings.
+
+The following example returns all sibling elements of <h2> that are <p> elements:
+
+Example
+```
+$(document).ready(function(){
+    $("h2").siblings("p");
+});
+```
+### jQuery next() Method
+The next() method returns the next sibling element of the selected element.
+
+The following example returns the next sibling of <h2>:
+
+Example
+```
+$(document).ready(function(){
+    $("h2").next();
+});
+```
+### jQuery nextAll() Method
+The nextAll() method returns all next sibling elements of the selected element.
+
+The following example returns all next sibling elements of <h2>:
+
+Example
+```
+$(document).ready(function(){
+    $("h2").nextAll();
+});
+```
+### jQuery nextUntil() Method
+The nextUntil() method returns all next sibling elements between two given arguments.
+
+The following example returns all sibling elements between a <h2> and a <h6> element:
+
+Example
+```
+$(document).ready(function(){
+    $("h2").nextUntil("h6");
+});
+```
+### jQuery prev(), prevAll() & prevUntil() Methods
+The prev(), prevAll() and prevUntil() methods work just like the methods above but with reverse functionality: they return previous sibling elements (traverse backwards along sibling elements in the DOM tree, instead of forward).
+## jQuery Traversing - Filtering
+### The first(), last(), eq(), filter() and not() Methods
+The most basic filtering methods are first(), last() and eq(), which allow you to select a specific element based on its position in a group of elements.
+
+Other filtering methods, like filter() and not() allow you to select elements that match, or do not match, a certain criteria.
+### jQuery first() Method
+The first() method returns the first element of the specified elements.
+
+The following example selects the first <div> element:
+
+Example
+```
+$(document).ready(function(){
+    $("div").first();
+});
+```
+### jQuery last() Method
+The last() method returns the last element of the specified elements.
+
+The following example selects the last <div> element:
+
+Example
+```
+$(document).ready(function(){
+    $("div").last();
+});
+```
+### jQuery eq() method
+The eq() method returns an element with a specific index number of the selected elements.
+
+The index numbers start at 0, so the first element will have the index number 0 and not 1. The following example selects the second <p> element (index number 1):
+
+Example
+```
+$(document).ready(function(){
+    $("p").eq(1);
+});
+```
+### jQuery filter() Method
+The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection, and those that match will be returned.
+
+The following example returns all <p> elements with class name "intro":
+
+Example
+```
+$(document).ready(function(){
+    $("p").filter(".intro");
+});
+```
+### jQuery not() Method
+The not() method returns all elements that do not match the criteria.
+
+Tip: The not() method is the opposite of filter().
+
+The following example returns all <p> elements that do not have class name "intro":
+
+Example
+```
+$(document).ready(function(){
+    $("p").not(".intro");
+});
+```
