@@ -1,6 +1,5 @@
 # jQuery learn note
 DOM = Document Object Model
-
 ## jQuery - Get Content and Attributes
 ### Get Content - text(), html(), and val()
 Three simple, but useful, jQuery methods for DOM manipulation are:
